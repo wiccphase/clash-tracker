@@ -61,11 +61,9 @@ def get_player_info(player_tag):
 
     # Проверяем, есть ли в ответе ожидаемые данные
     if 'reason' in player_data:
-        return "Ошибка: " + player_data['reason']  # Пример обработки ошибки
+        return "Ошибка: " + player_data['reason']  
     else:
-        # Извлекаем нужные данные из player_data
-        # Например, имя игрока
-
+    
         return response.json()
     
     
@@ -140,7 +138,7 @@ def handle_start_command(message):
         playerHouse = player_info.get('playerHouse', 'hz')
 
         
-        # Добавляем информацию о текущем участнике в текст сообщения
+       
         message_text = f"Имя пидора:{player_name}\n \n Тут мб фотку подгружу:{iconUrls} \n \n ЛВЛ Ратушки: {townHallLevel} \n \n Сколько задонатил: {donations} \n Сколько сожрал: {donationsReceived} \n \n Сколько всего звезд военных:{warStars} \n \n !!В разработке: {playerHouse}"
         bot.send_message(message.chat.id, message_text)
 

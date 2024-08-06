@@ -7,7 +7,7 @@ def get_clan_info(tag):
 
     response = requests.get(url, headers=headers)
 
-    response.raise_for_status()  # This will raise an exception if the response status is not 200
+    response.raise_for_status()  
     return response.json()
 
 if __name__ == "__main__":
